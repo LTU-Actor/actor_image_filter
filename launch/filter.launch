@@ -1,0 +1,13 @@
+<launch>
+
+    <arg name="input_topic" default="/cam_pub/image_raw" />
+
+    <group ns="image_filter">
+
+        <node name="image_filter" pkg="actor_image_filter" type="filter.py">
+            <param name="imgtopic_name" type="string" value="$(arg input_topic)" />
+        </node>
+
+    </group>
+
+</launch>
